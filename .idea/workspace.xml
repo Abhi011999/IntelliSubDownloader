@@ -21,8 +21,8 @@
       <file leaf-file-name="IntelliSubDownloader.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/IntelliSubDownloader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state relative-caret-position="395">
+              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -190,6 +190,14 @@
       <option name="presentableId" value="Default" />
       <updated>1492190762437</updated>
     </task>
+    <task id="LOCAL-00001" summary="Bug Fixes , Creating new function to exit script .">
+      <created>1493460050517</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1493460050517</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -227,6 +235,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Bug Fixes , Creating new function to exit script ." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes , Creating new function to exit script ." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -387,8 +399,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/IntelliSubDownloader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state relative-caret-position="395">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

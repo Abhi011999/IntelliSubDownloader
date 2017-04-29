@@ -54,8 +54,9 @@ flags = BS(str(soup.find('tbody').findAll('td', {'class': 'flag-cell'})), "html.
 for i in range(len(soup.find('tbody').findAll('tr'))):
     if BS(str(flags), "html.parser").findAll('span', {'class': 'sub-lang'})[i].text == "English":
         dict1[BS(str(soup.find('tbody').findAll('td', {'class': 'rating-cell'})), "html.parser").findAll('span')[i].text] = i
-    else:
-        exitscript("\033[1;31;40m No further results found")
+
+if dict == {}:
+    exitscript("\033[1;31;40m No further results found")
 
 dict1 = {int(v): int(k) for k, v in dict1.items()}
 i = max(dict1, key=dict1.get)
