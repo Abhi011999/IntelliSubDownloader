@@ -5,6 +5,14 @@ import os
 import re
 import time
 
+
+def exitscript(st):
+    os.system('cls')
+    print(st)
+    print("Exiting in 5 secs ...")
+    time.sleep(5)
+    exit()
+
 os.system('cls')
 name = input("Enter name of the movie --> ")
 html = urllib.request.urlopen("http://www.yifysubtitles.com/search?q="+("+".join(name.split(" "))))
@@ -12,12 +20,7 @@ soup = BS(html, "html.parser")
 
 if not soup.find('div', {'style': 'text-align:center;'}) is None:
     if soup.find('div', {'style': 'text-align:center;'}).text == "no results":
-        os.system('cls')
-        print("\033[1;31;40m No results found")
-        print("Exiting in 5 secs ...")
-        time.sleep(5)
-        exit()
-        os.system('exit')
+        exitscript("\033[1;31;40m No results found")
 
 list1 = soup.findAll('li', {'class': 'media media-movie-clickable'})
 list2 = BS(str(list1), "html.parser").findAll('div', {'class': 'media-body'})
@@ -38,12 +41,7 @@ for i in range(len(list1)):
         os.system('cls')
 
 if url == "":
-    os.system('cls')
-    print("\033[1;31;40m No further results found")
-    print("Exiting in 5 secs ...")
-    time.sleep(5)
-    exit()
-    os.system('exit')
+    exitscript("\033[1;31;40m No results found")
 
 os.system('cls')
 print("\033[1;34;40m Processing - Stage(I)")
@@ -56,6 +54,8 @@ flags = BS(str(soup.find('tbody').findAll('td', {'class': 'flag-cell'})), "html.
 for i in range(len(soup.find('tbody').findAll('tr'))):
     if BS(str(flags), "html.parser").findAll('span', {'class': 'sub-lang'})[i].text == "English":
         dict1[BS(str(soup.find('tbody').findAll('td', {'class': 'rating-cell'})), "html.parser").findAll('span')[i].text] = i
+    else:
+        exitscript("\033[1;31;40m No further results found")
 
 dict1 = {int(v): int(k) for k, v in dict1.items()}
 i = max(dict1, key=dict1.get)
@@ -83,10 +83,7 @@ for file in os.listdir(os.getcwd()):
     if file.endswith(".3g2") or file.endswith(".3gp") or file.endswith(".amv") or file.endswith(".asf") or file.endswith(".avi") or file.endswith(".drc") or file.endswith(".flv") or file.endswith(".gifv") or file.endswith(".m4v") or file.endswith(".mkv") or file.endswith(".mng") or file.endswith(".mov") or file.endswith(".qt") or file.endswith(".mp4") or file.endswith(".mpg") or file.endswith(".mpeg") or file.endswith(".nsv") or file.endswith(".ogv") or file.endswith(".ogg") or file.endswith(".rm") or file.endswith(".rmvb") or file.endswith(".vob") or file.endswith(".webm") or file.endswith(".wmv"):
         filename = os.path.splitext(file)[0]
         os.rename(subname, filename+".srt")
+    else:
+        exitscript("\033[1;31;40m No compatible movie found")
 
-os.system('cls')
-print("\033[1;32;40m Subtitle - Downloaded and Renamed")
-print("Exiting in 5 secs ...")
-time.sleep(5)
-exit()
-os.system('exit')
+exitscript("\033[1;32;40m Subtitle - Downloaded and Renamed")
