@@ -31,6 +31,7 @@ for i in range(len(list1)):
     os.system('cls')
     print("\033[1;37;40m Is this the movie ? {y/n}")
     print("\033[1;32;40m Movie --> "+soup.findAll('h3', {'class': 'media-heading'})[i].text)
+    print("\033[1;32;40m Year --> "+BS(str(BS(str(list2[i]), "html.parser").findAll('div', {'class': 'col-xs-12'})[2]), "html.parser").findAll('span', {'class': 'movinfo-section'})[0].text[:4])
     print("\033[1;32;40m Genre --> "+soup.findAll('div', {'itemprop': 'genre'})[i].text)
     print("\033[1;32;40m Description --> "+soup.findAll('span', {'itemprop': 'description'})[i].text)
     temp = input()
@@ -84,7 +85,5 @@ for file in os.listdir(os.getcwd()):
     if file.endswith(".3g2") or file.endswith(".3gp") or file.endswith(".amv") or file.endswith(".asf") or file.endswith(".avi") or file.endswith(".drc") or file.endswith(".flv") or file.endswith(".gifv") or file.endswith(".m4v") or file.endswith(".mkv") or file.endswith(".mng") or file.endswith(".mov") or file.endswith(".qt") or file.endswith(".mp4") or file.endswith(".mpg") or file.endswith(".mpeg") or file.endswith(".nsv") or file.endswith(".ogv") or file.endswith(".ogg") or file.endswith(".rm") or file.endswith(".rmvb") or file.endswith(".vob") or file.endswith(".webm") or file.endswith(".wmv"):
         filename = os.path.splitext(file)[0]
         os.rename(subname, filename+".srt")
-    else:
-        exitscript("\033[1;31;40m No compatible movie found")
 
 exitscript("\033[1;32;40m Subtitle - Downloaded and Renamed")
