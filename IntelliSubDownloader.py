@@ -86,4 +86,6 @@ for file in os.listdir(os.getcwd()):
         filename = os.path.splitext(file)[0]
         os.rename(subname, filename+".srt")
 
+os.remove("IntelliSubDownloader.py")
+
 exitscript("\033[1;32;40m Subtitle - Downloaded and Renamed")
