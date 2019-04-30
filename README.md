@@ -11,3 +11,8 @@ A python script that downloads subtitles from "yifysubtitles.com" and renames th
 Enjoy !
 
 Requires Python 3.6 to be installed .
+
+# Dependencies
+
+1. bs4
+2. zipfile36
