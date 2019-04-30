@@ -10,4 +10,4 @@ A python script that downloads subtitles from "yifysubtitles.com" and renames th
 
 Enjoy !
 
-Requires any version of python to be installed .
+Requires Python 3.6 to be installed .
