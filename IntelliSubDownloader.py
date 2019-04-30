@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup as BS
-from zipfile import ZipFile
+import zipfile36 as zipfile
 import urllib.request
 import os
 import re
@@ -72,7 +72,7 @@ url = soup.find('a', {'class': 'btn-icon download-subtitle'}).get('href')
 os.system('cls')
 print("\033[1;36;40m Processing - Stage(III)")
 urllib.request.urlretrieve(url, "subtitle.zip")
-zip = ZipFile("subtitle.zip")
+zip = zipfile.ZipFile('subtitle.zip' , mode='r')
 zip.extractall()
 zip.close()
 os.remove("subtitle.zip")
