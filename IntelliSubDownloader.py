@@ -11,6 +11,7 @@ blue = '\033[94m'
 yellow = '\033[93m'
 url = ""
 dict1 = {}
+found  = 0
 
 def exitscript(st):
     os.system('cls')
@@ -90,15 +91,18 @@ for zip_info in zip.infolist():
 zip.close()
 os.remove("subtitle.zip")
 
-for file in os.listdir(os.getcwd()):
+for file in os.listdir():
     if file.endswith(".srt"):
         subname = file
 
-for file in os.listdir(os.getcwd()):
+for file in os.listdir():
     if file.endswith(".3g2") or file.endswith(".3gp") or file.endswith(".amv") or file.endswith(".asf") or file.endswith(".avi") or file.endswith(".drc") or file.endswith(".flv") or file.endswith(".gifv") or file.endswith(".m4v") or file.endswith(".mkv") or file.endswith(".mng") or file.endswith(".mov") or file.endswith(".qt") or file.endswith(".mp4") or file.endswith(".mpg") or file.endswith(".mpeg") or file.endswith(".nsv") or file.endswith(".ogv") or file.endswith(".ogg") or file.endswith(".rm") or file.endswith(".rmvb") or file.endswith(".vob") or file.endswith(".webm") or file.endswith(".wmv"):
         filename = os.path.splitext(file)[0]
         os.rename(subname, filename+".srt")
-    else:
-        exitscript(red + "No recognized media file found !")
+        found = 1
 
-exitscript(green + "Subtitle - Downloaded and Renamed")
+if found == 1:
+    exitscript(green + "Subtitle - Downloaded and Renamed")
+else:
+    os.remove(subname)
+    exitscript(red + "No supported media files found!")
